@@ -9,7 +9,7 @@ import Signup from './Login/Signup';
 import HomeAdvisor from './Home_Advisor/Home';
 import HomeAdmin from './Home_Admin/Home';
 import DataTable from './Components/DataTable';
-import AddCourse from './Add_course/Home';
+import AddCourse from './Add_course/add_students';
 
 
 function App() {

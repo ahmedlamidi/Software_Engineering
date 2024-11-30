@@ -11,15 +11,19 @@ interface Item {
   checked: boolean;
 }
 
+
 const HomeAdvisor: React.FC = () => {
   const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
   const [items, setItems] = useState<Item[]>([
-    { id: 1, student_name: "Ahmed Lamid", student_grade:"Junior", student_department:"Engineering", checked: false },
-    {  id: 2, student_name: "Ahmed Lamidi", student_grade:"Junior", student_department:"Engineering", checked: false },
-    {  id: 3, student_name: "Ahmed Lamidb", student_grade:"Junior", student_department:"Engineering", checked: false  },
+    { id: 4901, student_name: "Ahmed Lamid", student_grade:"Junior", student_department:"Engineering", checked: false },
+    {  id: 3346, student_name: "Ahmed Lamidi", student_grade:"Junior", student_department:"Engineering", checked: false },
+    {  id: 9870, student_name: "Ahmed Lamidb", student_grade:"Junior", student_department:"Engineering", checked: false  },
   ]);
-
+  const HandleSubmit = () =>{
+    navigate("/advisor");
+    
+}
   const handleItemChange = (id: number): void => {
     setItems((prevItems) =>
       prevItems.map((item) =>
@@ -55,9 +59,13 @@ const HomeAdvisor: React.FC = () => {
 
       {/* Main Content */}
       <div className="body-container">
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <h2>Select a student</h2>
-      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ marginLeft: "auto", marginRight: "auto" }}>
+            <h3>Select Students</h3>
+         </div>
+  
+        <div className="submit" onClick={HandleSubmit}>Select Courses </div>
+</div>
       <div style={{ display: "flex", alignItems: "left", justifyContent: "left", gap: "20px" }}>
         <h3>Student ID</h3>
         <h3>Student Name</h3>
