@@ -27,9 +27,9 @@ const HomeAdvisor: React.FC = () => {
   const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
   const [items, setItems] = useState<Item[]>([
-    { id: 4901, student_name: "Ahmed Lamid", student_grade:"Junior", student_department:"Engineering", checked: false },
-    {  id: 3346, student_name: "Ahmed Lamidi", student_grade:"Junior", student_department:"Engineering", checked: false },
-    {  id: 9870, student_name: "Ahmed Lamidb", student_grade:"Junior", student_department:"Engineering", checked: false  },
+    { id: 4901, student_name: "Ahmed Lamidi", student_grade:"Junior", student_department:"Engineering", checked: false },
+    {  id: 3346, student_name: "Khanh Doung", student_grade:"Junior", student_department:"Engineering", checked: false },
+    {  id: 9870, student_name: "Carlos Pineda", student_grade:"Junior", student_department:"Engineering", checked: false  },
   ]);
   const anyItemChecked = items.some((item) => item.checked);
   const [showErrorPopup, setShowErrorPopup] = useState(false);
