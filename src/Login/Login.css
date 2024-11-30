@@ -8,6 +8,7 @@
     background: #fff;
     padding-bottom: 30px;
 }
+
 .header {
     display: flex;
     flex-direction: column;
@@ -15,16 +16,18 @@
     gap: 9px;
     width: 100%;
     margin-top: 30px;
-}
+    }
+    
+
 
 .text {
     color:#3c009d;
-    font-size: 48px;
+    font-size: 24px;
     font-weight: 700;
 }
 
 .underline{
-    width: 61px;
+    width: 120px;
     height: 6px;
     background: #3c009d;
     border-radius: 9px;
@@ -78,14 +81,19 @@
 
 .submit-container {
     display: flex;
-    gap: 30px;
-    margin: 60px auto;
+
+    /* gap: 10px; */
+    margin-top: 30px;
+    margin-bottom: 70px;
+    margin-left: 120px;
+    
 }
 
 .submit {
     display: flex;
-    justify-content: center;
     align-items: center;
+    
+    justify-content: center;
     width: 220px;
     height: 59px;
     color: white;
@@ -94,6 +102,7 @@
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
+    
 }
     .gray{
         background: #eaeaea;

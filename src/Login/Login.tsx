@@ -13,19 +13,38 @@ function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     
-    const HandleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent) => {
-        e.preventDefault()
-        axios.post("http://localhost:5000/login",{email, password})
-        .then(result => {
-            console.log(result)
-            if (result.data === "Success") {
-                navigate('/home')
-            }
-            else {
-                alert(result.data)
-            }
-        })
-        .catch(err => console.log(err))
+    // const HandleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent) => {
+    //     e.preventDefault()
+    //     axios.post("http://localhost:5000/login",{email, password})
+    //     .then(result => {
+    //         console.log(result)
+    //         if (result.data === "Success") {
+                
+
+
+    //             navigate('/home')
+    //         }
+    //         else {
+    //             alert(result.data)
+    //         }
+    //     })
+    //     .catch(err => console.log(err))
+    // }
+
+    const HandleSubmit = () =>{
+        if (email.endsWith("student")){
+        navigate('/student');
+        }
+        else if (email.endsWith("teacher")){
+            navigate('/teacher')
+        }
+        else if (email.endsWith("Admin")){
+            navigate('/admin')
+        }
+        else if (email.endsWith('advisor')){
+            navigate('/advisor')
+        }
+        
     }
     
     const handleSignupClick = () => {
@@ -35,7 +54,7 @@ function Login() {
     return (
         <div className="container container-fluid">
             <div className="header">
-                <div className = "text ">{action}</div>
+                <div className = "text ">Student Management System</div>
                 <div className="underline"></div>
             </div>
             <form onSubmit={HandleSubmit}>
@@ -49,7 +68,7 @@ function Login() {
             <div className="inputs">
                 <div className="input">
                     <img src={email_i} alt=""/>
-                    <input type="email" placeholder="Email" onChange={(e) => {setEmail(e.target.value)}}/>
+                    <input type="email" placeholder="Username" onChange={(e) => {setEmail(e.target.value)}}/>
                 </div>
             </div>
             <div className="inputs">
@@ -58,9 +77,9 @@ function Login() {
                     <input type="password" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}/>
                 </div>
             </div>
-            {action === "Log In" && <div className="forgot-password">Forgot Password? <span>Click Here</span></div>}
+            {/* {action === "Log In" && <div className="forgot-password">Forgot Password? <span>Click Here</span></div>} */}
             <div className="submit-container">
-                <div className="submit   gray" onClick={handleSignupClick}>Sign Up</div>
+                {/* <div className="submit   gray" onClick={handleSignupClick}>Sign Up</div> */}
                 <div className="submit" onClick={HandleSubmit}>Log In</div>
             </div>  
             <button className="btn" type="submit" style ={{display : 'none'}}>Submit</button>
