@@ -36,7 +36,8 @@ const HomeAdvisor: React.FC = () => {
 
   const HandleSubmit = () =>{
     if(anyItemChecked){
-    navigate("/advisor", { state: items});
+    const filteredItems = items.filter((item) => item.checked);
+    navigate("/add_page", { state: filteredItems});
     }
     else{
       setShowErrorPopup(true);
@@ -94,7 +95,7 @@ const HandleError = () =>{
         <div className="submit" onClick={HandleSubmit}>Select Courses </div>
         {showErrorPopup && (
         <ErrorPopup
-          message="Please select at least one item!"
+          message="Please select atleast one Student!"
           onClose={handleCloseErrorPopup}
         />
       )}

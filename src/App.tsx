@@ -10,6 +10,7 @@ import HomeAdvisor from './Home_Advisor/Home';
 import HomeAdmin from './Home_Admin/Home';
 import DataTable from './Components/DataTable';
 import AddCourse from './Add_course/add_students';
+import Add_page from './Add_course/add_course';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path='/admin' element={<HomeAdmin/>}></Route>
               <Route path='/table' element={<DataTable/>}></Route>
               <Route path='/add_course' element = {<AddCourse/>}></Route>
+              <Route path='/add_page' element = {<Add_page/>}></Route>
               {/* Route... */}
           </Routes>
       </Router>
