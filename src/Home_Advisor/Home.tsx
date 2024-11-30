@@ -1,14 +1,13 @@
 import "./Home.css"
 import React, { useState, useEffect} from 'react';
 import { MdAccountBalance } from "react-icons/md";
-import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
+
 
 function HomeAdvisor() {
 
-
+    const navigate = useNavigate();
     const [currentTime, setCurrentTime] = useState(new Date());
 
     const HandleSubmit = () =>{
@@ -50,9 +49,9 @@ function HomeAdvisor() {
             </div>
 
             
-            <button className = 'custom-box' onClick={HandleSubmit}>
+            <div className = 'custom-box' onClick={HandleSubmit}>
                 <h2>Add courses</h2>
-            </button>
+            </div>
 
            
             <div className="custom-box">
