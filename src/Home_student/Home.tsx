@@ -24,6 +24,10 @@ function HomeStudent() {
       navigate('/student-summary');
     };
 
+    const handleScheduleClick = () => {
+      navigate('/student-schedule'); // Correct route path
+  };
+
     const studentName = "John Doe"; // Replace with dynamic data if needed
     const date = currentTime.toLocaleDateString();
     const time = currentTime.toLocaleTimeString();
@@ -49,7 +53,7 @@ function HomeStudent() {
               <h2>Student Summary</h2>
             </div>
 
-            <div className="custom-box">
+            <div className="custom-box" onClick={handleScheduleClick}>
                 <h2>Student Schedule</h2>
             </div>
 

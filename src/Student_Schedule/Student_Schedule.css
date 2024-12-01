@@ -1,0 +1,73 @@
+/* TeacherCourses.css */
+
+.bg-light {
+    background-color: #f5f5f5;
+  }
+  
+  .header-container {
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0; /* Sticks to the top of the page */
+        left: 0; /* Ensures it spans full width */
+        width: 100vw; /* Full viewport width */
+        background-color: #5e7cc9; /* Indigo background color */
+        padding: 30px; /* Space inside the container */
+        z-index: 9999; /* Keeps the header above other content */
+    }
+    .ahmed-left {
+        text-align: left;
+    }
+    .ahmed-right {
+        text-align: right;
+    }
+  
+  .summary-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow : 10px 10px 60px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 150px; /* Space for the fixed header */
+    text-align: center; /* Center the content */
+  }
+  
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns for time and days */
+    gap: 10px; /* Space between grid items */
+    margin-top: 20px;
+  }
+  
+  .grid-header {
+    background-color: #5e7cc9; /* Header background color */
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .grid-cell {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    background-color: #fff; /* White background for cells */
+  }
+  
+  .grid-cell:hover {
+    background-color: #ddd; /* Highlight on hover */
+  }
+  
+  .grid-cell {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: #fff; /* Default white background */
+  }
+  
+  .shaded {
+    background-color: #d1e7dd; /* Light green background for non-null cells */
+  }
+  
