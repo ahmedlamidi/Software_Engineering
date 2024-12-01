@@ -1,7 +1,6 @@
-// src/StudentSummary/StudentSummary.tsx
+import "./Home.css"
 import React, { useState, useEffect } from 'react';
 import { MdAccountBalance } from "react-icons/md";
-import './StudentSummary.css';
 
 const StudentSummary: React.FC = () => {
     const [currentTime, setCurrentTime] = useState<Date>(new Date());
