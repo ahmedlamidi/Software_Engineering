@@ -13,7 +13,9 @@ import AddCourse from './Add_course/add_students';
 import Add_page from './Add_course/add_course';
 import StudentSummary from './StudentSummary/StudentSummary';
 import TeacherCourses from './TeacherCourses/TeacherCourses';
-import StudentSchedule from './Student_Schedule/Student_Schedule'; // Adjusted import path
+import StudentSchedule from './Student_Schedule/Student_Schedule';
+import StudentAccount from './Student_Account/Student_Account';
+
 
 
 
@@ -34,6 +36,7 @@ function App() {
               <Route path='/student-summary' element={<StudentSummary/>}></Route>
               <Route path='/teacher-courses' element={<TeacherCourses/>}></Route>
               <Route path='/student-schedule' element={<StudentSchedule />} />
+              <Route path="/student-account" element={<StudentAccount />} />
               {/* Route... */}
           </Routes>
       </Router>

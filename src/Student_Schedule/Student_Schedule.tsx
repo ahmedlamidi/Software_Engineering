@@ -2,8 +2,10 @@ import React from 'react';
 import './Student_Schedule.css';
 import { MdAccountBalance } from "react-icons/md";
 import { useState, useEffect} from 'react';
+import { useNavigate } from "react-router-dom";
 
 const StudentSchedule: React.FC = () => {
+    const navigate = useNavigate();
     // Generate time blocks from 8 AM to 7 PM
     const timeBlocks = [];
     for (let hour = 8; hour <= 19; hour++) {
@@ -45,7 +47,7 @@ const StudentSchedule: React.FC = () => {
         <div className="bg-light">
             <div className="header-container">
                 <header className="text-white py-4">
-                    <div className="ahmed-left h3 font-weight-bold">
+                    <div className="ahmed-left h3 font-weight-bold" onClick={()=>navigate('/student')}>
                         <MdAccountBalance />
                         Welcome Home, Student {studentName}
                         <div className="ahmed-right small">{date}</div>

@@ -2,19 +2,24 @@ import "./Home.css"
 import { useState, useEffect} from 'react';
 import { MdAccountBalance } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { MdAccountCircle } from "react-icons/md";
+
 
 function HomeStudent() {
     const navigate = useNavigate();
 
     const [currentTime, setCurrentTime] = useState(new Date());
 
- 
     useEffect(() => {
         const intervalId = setInterval(() => {
         setCurrentTime(new Date());
         }, 1000);
         return () => clearInterval(intervalId); 
     }, []);
+
+    const handleAccountClick = () => {
+      navigate('/student-account'); // Navigate to the Account page
+  };  
 
     const handleCoursesClick = () => {
       navigate('/table');
@@ -26,7 +31,11 @@ function HomeStudent() {
 
     const handleScheduleClick = () => {
       navigate('/student-schedule'); // Correct route path
-  };
+    };
+
+    const handleLogIn = () => {
+    navigate('/');
+    };
 
     const studentName = "John Doe"; // Replace with dynamic data if needed
     const date = currentTime.toLocaleDateString();
@@ -36,8 +45,16 @@ function HomeStudent() {
     {/* Header Section */}
     <div className="header-container">
       <header className="text-white py-4">
-        <div className="ahmed-left h3 font-weight-bold"><MdAccountBalance />
+        <div className="ahmed-left h3 font-weight-bold" onClick={handleLogIn}><MdAccountBalance />
         Welcome Home, Student {studentName}</div>
+        <div className="ahmed-right">
+          <MdAccountCircle 
+              className="account-icon" 
+              size={30} 
+              onClick={handleAccountClick} 
+              style={{ cursor: 'pointer' }}
+          />
+        </div>
         <div className="ahmed-right small">{date}</div>
         <div className="ahmed-right small">{time}</div>
       </header>
