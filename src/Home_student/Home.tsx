@@ -1,5 +1,5 @@
 import "./Home.css"
-import React, { useState, useEffect} from 'react';
+import { useState, useEffect} from 'react';
 import { MdAccountBalance } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
@@ -15,8 +15,13 @@ function HomeStudent() {
         }, 1000);
         return () => clearInterval(intervalId); 
     }, []);
+
     const handleCoursesClick = () => {
       navigate('/table');
+    };
+
+    const handleSummaryClick = () => {
+      navigate('/student-summary');
     };
 
     const studentName = "John Doe"; // Replace with dynamic data if needed
@@ -40,20 +45,17 @@ function HomeStudent() {
         <div className="">
         <div className="custom-container">
             
-            <div className="custom-box">
-                <h2>Student Summary</h2>
+            <div className="custom-box" onClick={handleSummaryClick}>
+              <h2>Student Summary</h2>
             </div>
 
-            
             <div className="custom-box">
                 <h2>Student Schedule</h2>
             </div>
 
-           
             <div className="custom-box" onClick={handleCoursesClick}>
                 <h2>Courses List</h2>
             </div>
-
             
             <div className="custom-box">
                 <h2>What If</h2>
