@@ -18,12 +18,98 @@
     margin: 10px 0; /* Margin for spacing */
 }
 
-.progress {
-    background-color: #4caf50; /* Change this color to your desired progress color */
-    height: 100%; /* Full height of the progress bar */
-    transition: width 0.5s; /* Smooth transition for width change */
-}
 
 .body-container {
-    margin-bottom: 20px; /* Reduced bottom margin */
+    margin-bottom: 0px; /* Reduced bottom margin */
 }
+
+/* Global Light Background */
+.bg-light {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Header Styles */
+  .header-container {
+    background-color: #5e7cc9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .header-container h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header-container .small {
+    font-size: 0.9rem;
+  }
+  
+  /* Summary Container */
+  .summary-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .detail-card {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .detail-card strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  /* Progress Bar */
+  .progress-container {
+    margin: 20px 0;
+  }
+  
+  .progress-bar {
+    background-color: #e9ecef;
+    border-radius: 50px;
+    height: 20px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    background: linear-gradient(90deg, #5e7cc9, #4caf50);
+    height: 100%;
+    border-radius: 50px;
+  }
+  
+  /* Section Headers */
+  .section {
+    margin-top: 20px;
+  }
+  
+  .section ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .section ul li {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  

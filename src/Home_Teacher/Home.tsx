@@ -1,9 +1,10 @@
 import "./Home.css"
 import React, { useState, useEffect} from 'react';
 import { MdAccountBalance } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 function HomeTeacher() {
-
+  const navigate = useNavigate();
 
     const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -14,6 +15,10 @@ function HomeTeacher() {
         }, 1000);
         return () => clearInterval(intervalId); 
     }, []);
+
+    const handleScheduleClick = () => {
+      navigate('/teacher-courses');
+    };
 
     const teacherName = "John Doe"; // Replace with dynamic data if needed
     const date = currentTime.toLocaleDateString();
@@ -41,7 +46,7 @@ function HomeTeacher() {
             </div>
 
             
-            <div className="custom-box">
+            <div className="custom-box" onClick={handleScheduleClick}>
                 <h2>Teacher Courses</h2>
             </div>
 

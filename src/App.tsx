@@ -12,6 +12,7 @@ import DataTable from './Components/DataTable';
 import AddCourse from './Add_course/add_students';
 import Add_page from './Add_course/add_course';
 import StudentSummary from './StudentSummary/StudentSummary';
+import TeacherCourses from './TeacherCourses/TeacherCourses';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route path='/add_course' element = {<AddCourse/>}></Route>
               <Route path='/add_page' element = {<Add_page/>}></Route>
               <Route path='/student-summary' element={<StudentSummary/>}></Route>
+              <Route path='/teacher-courses' element={<TeacherCourses/>}></Route>
               {/* Route... */}
           </Routes>
       </Router>

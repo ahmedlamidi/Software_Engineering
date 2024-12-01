@@ -24,7 +24,7 @@ const Add_page: React.FC = () => {
 
   const filteredItems = location.state || []; // Retrieve the passed state
 
-  const ErrorPopup = ({ message, onClose }) => {
+  const ErrorPopup = ({message, onClose}) => {
     return (
       <div className="error-popup">
         <div className="error-popup-content">
@@ -35,7 +35,7 @@ const Add_page: React.FC = () => {
     );
   };
   const filteredItems_2 = items.filter((item) => item.checked);
-  const SuccessPopup = ({ message, onClose }) => {
+  const SuccessPopup = ({message, onClose}) => {
     return (
       <div className="error-popup">
         <div className="error-popup-content">

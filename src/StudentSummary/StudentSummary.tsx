@@ -1,7 +1,7 @@
-import "./Home.css"
-import React, { useState, useEffect } from 'react';
+//import "./Home.css";
+import React, { useState, useEffect } from "react";
 import { MdAccountBalance } from "react-icons/md";
-import './StudentSummary.css';
+import "./StudentSummary.css";
 
 const StudentSummary: React.FC = () => {
     const [currentTime, setCurrentTime] = useState<Date>(new Date());
@@ -11,11 +11,11 @@ const StudentSummary: React.FC = () => {
         grade: "Junior",
         gpa: 3.5,
         expectedGraduation: "2025",
-        creditsCompleted: 60,
+        creditsCompleted: 75,
         transferCredits: 15,
-        remainingCredits: 30,
+        remainingCredits: 45,
         unmetRequirements: ["Calculus II", "Data Structures"],
-        courses: ["Mathematics", "Chemistry", "Physics"]
+        courses: ["Calculus I", "Chemistry", "Physics"],
     });
 
     useEffect(() => {
@@ -27,57 +27,94 @@ const StudentSummary: React.FC = () => {
 
     const date = currentTime.toLocaleDateString();
     const time = currentTime.toLocaleTimeString();
-
     const totalCredits = student.creditsCompleted + student.remainingCredits;
 
     return (
         <div className="bg-light">
             {/* Header Section */}
             <div className="header-container">
-                <header className="text-white py-4">
-                    <div className="ahmed-left h3 font-weight-bold">
-                        <MdAccountBalance />
-                        Welcome Home, Student {student.name}
+                <header className="text-white py-4 d-flex justify-content-between align-items-center">
+                    <h1 className="h3 font-weight-bold d-flex align-items-center">
+                        <MdAccountBalance className="mr-2" />
+                        Welcome, {student.name}
+                    </h1>
+                    <div>
+                        <div className="small">{date}</div>
+                        <div className="small">{time}</div>
                     </div>
-                    <div className="ahmed-right small">{date}</div>
-                    <div className="ahmed-right small">{time}</div>
                 </header>
             </div>
 
             {/* Main Content */}
             <div className="body-container">
                 <div className="summary-container">
-                    <h2>Student Summary</h2>
-                    <p><strong>Department:</strong> {student.department}</p>
-                    <p><strong>Grade:</strong> {student.grade}</p>
-                    <p><strong>GPA:</strong> {student.gpa}</p>
-                    <p><strong>Expected Graduation:</strong> {student.expectedGraduation}</p>
-                    <p><strong>Credits Completed:</strong> {student.creditsCompleted}</p>
-                    <p><strong>Transfer Credits:</strong> {student.transferCredits}</p>
-                    <p><strong>Remaining Credits:</strong> {student.remainingCredits}</p>
-                    
-                    {/* Progress Bar */}
-                    <div className="progress-bar">
-                        <div 
-                            className="progress" 
-                            style={{ width: `${(student.creditsCompleted / totalCredits) * 100}%` }}
-                        ></div>
+                    <h2 className="mb-4">Student Summary</h2>
+
+                    {/* Summary Details */}
+                    <div className="details-grid">
+                        <div className="detail-card">
+                            <strong>Department:</strong>
+                            <span>{student.department}</span>
+                        </div>
+                        <div className="detail-card">
+                            <strong>Grade:</strong>
+                            <span>{student.grade}</span>
+                        </div>
+                        <div className="detail-card">
+                            <strong>GPA:</strong>
+                            <span>{student.gpa}</span>
+                        </div>
+                        <div className="detail-card">
+                            <strong>Expected Graduation:</strong>
+                            <span>{student.expectedGraduation}</span>
+                        </div>
+                        <div className="detail-card">
+                            <strong>Credits Completed:</strong>
+                            <span>{student.creditsCompleted}</span>
+                        </div>
+                        <div className="detail-card">
+                            <strong>Transfer Credits:</strong>
+                            <span>{student.transferCredits}</span>
+                        </div>
+                        <div className="detail-card">
+                            <strong>Remaining Credits:</strong>
+                            <span>{student.remainingCredits}</span>
+                        </div>
                     </div>
-                    <p>{((student.creditsCompleted / totalCredits) * 100).toFixed(2)}% Completed</p>
 
-                    <h3>Unmet Class Requirements:</h3>
-                    <ul>
-                        {student.unmetRequirements.map((requirement, index) => (
-                            <li key={index}>{requirement}</li>
-                        ))}
-                    </ul>
+                    {/* Progress Bar */}
+                    <div className="progress-container">
+                        <p className="mb-1">Progress</p>
+                        <div className="progress-bar">
+                            <div
+                                className="progress"
+                                style={{
+                                    width: `${(student.creditsCompleted / totalCredits) * 100}%`,
+                                }}
+                            ></div>
+                        </div>
+                        <p>{((student.creditsCompleted / totalCredits) * 100).toFixed(2)}% Completed</p>
+                    </div>
 
-                    <h3>Enrolled Courses:</h3>
-                    <ul>
-                        {student.courses.map((course, index) => (
-                            <li key={index}>{course}</li>
-                        ))}
-                    </ul>
+                    {/* Unmet Requirements */}
+                    <div className="section">
+                        <h3>Unmet Class Requirements</h3>
+                        <ul>
+                            {student.unmetRequirements.map((requirement, index) => (
+                                <li key={index}>{requirement}</li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Enrolled Courses */}
+                    <div className="section">
+                        <h3>Enrolled Courses</h3>
+                        <ul>
+                            {student.courses.map((course, index) => (
+                                <li key={index}>{course}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
