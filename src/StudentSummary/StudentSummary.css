@@ -1,0 +1,29 @@
+/* src/StudentSummary/StudentSummary.css */
+.bg-light {
+    background-color: #f5f5f5;
+}
+
+.summary-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    background-color: #e0e0e0; /* Background color of the progress bar */
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px; /* Height of the progress bar */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.progress {
+    background-color: #4caf50; /* Change this color to your desired progress color */
+    height: 100%; /* Full height of the progress bar */
+    transition: width 0.5s; /* Smooth transition for width change */
+}
+
+.body-container {
+    margin-bottom: 20px; /* Reduced bottom margin */
+}
