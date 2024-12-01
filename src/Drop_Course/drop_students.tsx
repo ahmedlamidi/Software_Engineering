@@ -12,7 +12,7 @@ interface Item {
 }
 
 
-const AddStudent: React.FC = () => {
+const DropStudent: React.FC = () => {
 
   const ErrorPopup = ({ message, onClose }) => {
     return (
@@ -37,7 +37,7 @@ const AddStudent: React.FC = () => {
   const HandleSubmit = () =>{
     if(anyItemChecked){
     const filteredItems = items.filter((item) => item.checked);
-    navigate("/add_course", { state: filteredItems});
+    navigate("/drop_course", { state: filteredItems});
     }
     else{
       setShowErrorPopup(true);
@@ -50,15 +50,21 @@ const handleCloseErrorPopup = () => {
 
 const HandleError = () =>{
 
-  navigate("/add_page");
+  navigate("/drop_course");
 }
-  const handleItemChange = (id: number): void => {
-    setItems((prevItems) =>
-      prevItems.map((item) =>
+const handleItemChange = (id: number): void => {
+  setItems((prevItems) => {
+    const isAnyChecked = prevItems.some((item) => item.checked && item.id !== id);
+
+    if (!isAnyChecked) {
+      return prevItems.map((item) =>
         item.id === id ? { ...item, checked: !item.checked } : item
-      )
-    );
-  };
+      );
+    }
+    return prevItems;
+  });
+};
+
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -95,7 +101,7 @@ const HandleError = () =>{
         <div className="submit" onClick={HandleSubmit}>Select Courses </div>
         {showErrorPopup && (
         <ErrorPopup
-          message="Please select atleast one Student!"
+          message="Please select a Student!"
           onClose={handleCloseErrorPopup}
         />
       )}
@@ -138,4 +144,4 @@ const HandleError = () =>{
   );
 };
 
-export default AddStudent;
+export default DropStudent;

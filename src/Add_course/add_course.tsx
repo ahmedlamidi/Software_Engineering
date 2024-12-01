@@ -12,7 +12,7 @@ interface Item {
 }
 
 
-const Add_page: React.FC = () => {
+const AddCourse: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
@@ -171,4 +171,4 @@ const handleCloseSuccessPopup = () => {
   );
 };
 
-export default Add_page;
+export default AddCourse;

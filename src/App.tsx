@@ -9,8 +9,10 @@ import Signup from './Login/Signup';
 import HomeAdvisor from './Home_Advisor/Home';
 import HomeAdmin from './Home_Admin/Home';
 import DataTable from './Components/DataTable';
-import AddCourse from './Add_course/add_students';
-import Add_page from './Add_course/add_course';
+import AddStudent from './Add_course/add_students';
+import AddCourse from './Add_course/add_course';
+import DropStudent from './Drop_Course/drop_students';
+import DropCourse from './Drop_Course/drop_course';
 import StudentSummary from './StudentSummary/StudentSummary';
 import TeacherCourses from './TeacherCourses/TeacherCourses';
 import StudentSchedule from './Student_Schedule/Student_Schedule';
@@ -32,11 +34,13 @@ function App() {
               <Route path='/admin' element={<HomeAdmin/>}></Route>
               <Route path='/table' element={<DataTable/>}></Route>
               <Route path='/add_course' element = {<AddCourse/>}></Route>
-              <Route path='/add_page' element = {<Add_page/>}></Route>
+              <Route path='/add_page' element = {<AddStudent/>}></Route>
               <Route path='/student-summary' element={<StudentSummary/>}></Route>
               <Route path='/teacher-courses' element={<TeacherCourses/>}></Route>
               <Route path='/student-schedule' element={<StudentSchedule />} />
               <Route path="/student-account" element={<StudentAccount />} />
+              <Route path="/drop_course" element={<DropCourse />} />
+              <Route path="/drop_student" element={<DropStudent />} />
               {/* Route... */}
           </Routes>
       </Router>

@@ -11,8 +11,13 @@ function HomeAdvisor() {
     const [currentTime, setCurrentTime] = useState(new Date());
 
     const HandleSubmit = () =>{
-        navigate('/add_course');
+        navigate('/add_page');
     }
+
+    const HandleDrop = () =>{
+      navigate('/drop_student');
+  }
+
     
 
  
@@ -54,7 +59,7 @@ function HomeAdvisor() {
             </div>
 
            
-            <div className="custom-box">
+            <div className="custom-box" onClick={HandleDrop}>
                 <h2>Drop courses</h2>
             </div>
 
