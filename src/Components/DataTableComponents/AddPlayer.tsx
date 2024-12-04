@@ -76,7 +76,7 @@ const AddPlayer =  ({ show, handleClose, fetchPlayer } : Box) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Add New Player</Modal.Title>
+        <Modal.Title>Add New Course</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>

@@ -198,7 +198,7 @@ function DataTable() {
       <div className="headers ">
         <button className="filter-btn">Filter</button>
         <input type="text" placeholder="Search..." className="search-bar" value={searchTerm} onChange={handleSearch} />
-        <button className="add-customer-btn" onClick={handleShow}>+ Add player</button>
+        <button className="add-customer-btn" onClick={handleShow}>+ Add Course</button>
       </div>
       <table className="data-table">
         <thead>
@@ -207,10 +207,10 @@ function DataTable() {
             <th>#</th>
             <th>Name</th>
             <th>Description</th>
-            <th>Level</th>
-            <th>Pos</th>
-            <th>Nation</th>
-            <th>Number</th>
+            <th>Seats</th>
+            <th>Location</th>
+            <th>Professor</th>
+            <th>Available</th>
           </tr>
         </thead>
         <tbody>

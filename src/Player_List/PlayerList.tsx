@@ -31,7 +31,7 @@ function PlayerList() {
 
     return (
         <div>
-            <h2>Player Management</h2>
+            <h2>Courses Management</h2>
             <table className="table">
                 <thead>
                     <tr>
